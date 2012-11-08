@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/jmFullWall.css" />
+		
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.imgpreload.js"></script>
+		<script type="text/javascript" src="js/jquery.imagepanner.js"></script>
+		<script type="text/javascript" src="js/jquery.jmFullWall.js"></script>
+		<script type="text/javascript" src="js/jq.wrapcaptions.js"></script>
+
+		<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+		<script type='text/javascript' src='js/gallery.js'></script>
+		
+		<style>
+			.overlay {background-color:#000; cursor:wait;}
+			
+			#simplemodal-overlay {background-color:#111;opacity:0.9;}
+			#simplemodal-container {background-color:#333; border:1px solid #eee;}
+			
+			html {
+				overflow : hidden;
+			}
+		</style>
+		
+		<script>
+			$(document).ready(function() {
+				
+				$("img").each(function(i) 
+				{
+					var captiontext = $(this).attr('title');
+					$(this).wrap("<div class='imgpost'></div>");
+					$(this).parent().append("<div class='thecaption'>" + captiontext + "</div>");		
+				});
+			});
+			
+			$(function(){
+				$('#wall').jmFullWall({
+					itemsForRow : 2,
+					itemTransition : 'slideDown',
+					itemTransitionSpeed : 150,
+					detailTransitionIn : 'slideDown',
+					detailTransitionOut : 'slideUp',
+					width : 1024,
+					height : 580
+				});	
+			});
+			
+			$('#wall-top').hide();
+		</script>
+    </head>
+
+    <body>
+		<div class="overlay" id="overlay-container">
+		</div>
+		<div id="wrap">
+			<div id="page-content">
+				<div id="page" class="clearfix shadow">
+				
+					<div id="wall-top">
+					</div>
+					<div id="wall-container" class="showcase">
+						<div id="wall-loading">
+							<center>
+								Loading...
+							</center>							
+						</div>
+						<div id="wall">
+							<div id="wall-items">	
+								<div class="wall-item">
+									<span class="bg hide">images/showcase/showcase_1.jpg</span>
+									<span class="img_detail hide">images/showcase/showcase_1.jpg</span>
+									<span class="tooltip hide">Rings</span>
+									<a href="gallery_rings.html"><span class="title">Rings</span></a>
+								</div>
+
+								<div class="wall-item">
+									<span class="bg hide">images/showcase/showcase_2.jpg</span>
+									<span class="img_detail hide">images/showcase/showcase_2.jpg</span>
+									<span class="tooltip hide">Pendants</span>
+									<a href="gallery_pendants.html"><span class="title">Pendants</span></a>
+								</div>
+
+								<div class="wall-item">
+									<span class="bg hide">images/showcase/showcase_3.jpg</span>
+									<span class="img_detail hide">images/showcase/showcase_3.jpg</span>
+									<span class="tooltip hide">Necklace</span>
+									<a href="gallery_necklace.html"><span class="title">Necklace</span></a>
+								</div>
+
+								<div class="wall-item">
+									<span class="bg hide">images/showcase/showcase_5.jpg</span>
+									<span class="img_detail hide">images/showcase/showcase_5.jpg</span>
+									<span class="tooltip hide">Bracelets</span>
+									<a href="gallery_bracelets.html"><span class="title">Bracelets</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="footer" class="oe_wrapper">
+					<div id="navigation"></div>
+					<div id="thumbnails" class="thumbs"></div>
+				</div>
+			</div>	
+			
+			<!-- Copyrights -->
+			<div class="copyrights">
+				Copyrights 2012
+			</div>
+		</div>	
+		
+		<script type="text/javascript">
+        	window.onload=function(){
+		        $("img").hover(
+        		  function () {
+        			$(this)
+        			.animate({ 
+      					opacity: 0.7
+      				} );
+					$(this).next().show();
+        		  }, 
+        		  function () {
+        			  $(this)
+        			  .animate({ 
+        					opacity: 1.0
+        			  });
+					  $(this).next().hide();
+        		  }
+        		);
+		        
+		        $('#navigation').load('common/navigation.html',function() {
+					$('#showcase').addClass('current');
+					$('.thumbs').hide();
+		        	var bottom = $('.thumbs').css('bottom');
+		        	$('.navigation').css(
+		        		{
+		        			'bottom': bottom
+		        		}
+		        	); 
+				});
+        	}
+        </script>
+    </body>
+</html>

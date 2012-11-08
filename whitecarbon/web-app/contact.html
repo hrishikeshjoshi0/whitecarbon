@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		
+		
+		<style>
+			#address {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 12px;
+				color: #C0A172;
+			}
+			
+			.info {
+				font-weight : 400;
+			}
+			
+			.h1 {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 13px;
+				font-weight : bold;
+				color: #FAFAFA;
+			}
+		</style>
+		
+		
+    </head>
+
+    <body>
+		<div id="wrap">
+			<div id="page-content">
+				<div id="page" class="clearfix shadow" style="display: block; margin-bottom:-100px;">
+					<center>
+						<div id="map">
+							<iframe width="600px" height="200px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+							src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=tata+road+Opera+House,+Girgaon,+Mumbai,+Maharashtra,+India&amp;aq=&amp;sll=18.955141,72.817956&amp;sspn=0.011608,0.021136&amp;ie=UTF8&amp;hq=tata+road+Opera+House,&amp;hnear=Girgaon,+Mumbai,+Maharashtra,+India&amp;ll=19.000653,72.847364&amp;spn=0.180793,0.072701&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=tata+road+Opera+House,+Girgaon,+Mumbai,+Maharashtra,+India&amp;aq=&amp;sll=18.955141,72.817956&amp;sspn=0.011608,0.021136&amp;ie=UTF8&amp;hq=tata+road+Opera+House,&amp;hnear=Girgaon,+Mumbai,+Maharashtra,+India&amp;ll=19.000653,72.847364&amp;spn=0.180793,0.072701&amp;t=m" 
+							style="color:#FAFAFA;text-align:left">View Larger Map</a></small>
+						</div>
+							
+						<div class="name" style="margin-top:15px;border-bottom: 1px solid #C0A172;width:400px;">
+							<img src="images/contact_us.png" height="40px" />
+						</div>
+						
+						<br/>
+						
+						<div id="address" style="width:400px;">
+							<div class="left" style="text-align : left;">
+								<div >
+									48, Popular Arcade, <br/>
+									Mezzanine Floor, <br/>
+									Tata Road No. 1, Opera House <br/>
+									Mumbai - 400004<br />
+								</div>
+							</div>
+							
+							<div class="right" style="text-align : left;">
+								<div >
+									Telephone : <span class="info">+91 22 2361 0076 </span> <br />
+									Email : <span class="info"><a href="mailto:info@whitecarbon.in" style="color:#fff;">info@whitecarbon.in</a></span> <br />
+									Website : <span class="info"><a href="http://www.whitecarbon.in" style="color:#fff;">www.whitecarbon.in</a></span>
+								</div>
+							</div>
+						</div>
+					</center>
+				</div>
+				<div id="footer" class="oe_wrapper">
+					<div id="navigation"></div>
+					<div id="thumbnails" class="thumbs"></div>
+				</div>
+				<!-- Copyrights -->
+				<div class="copyrights">
+					Copyrights 2012
+				</div>
+			</div>
+		</div>
+		
+				
+		
+        <script type="text/javascript">
+			$('#navigation').load('common/navigation.html',function() {
+		        	$('#home').addClass('current');
+		    });
+			
+			$('#thumbnails').load('common/thumbnails.html',function() {
+				var scrollEasingAmount = 6;
+					
+				/* calling thumbnailScroller function with options as parameters */
+				$("#tS1").thumbnailScroller({ 
+					scrollerType:"hoverAccelerate", 
+					scrollerOrientation:"horizontal", 
+					scrollSpeed:2, 
+					scrollEasing:"easeOutCirc", 
+					scrollEasingAmount:600, 
+					acceleration:4, 
+					scrollSpeed:800, 
+					noScrollCenterSpace:10, 
+					autoScrolling:0, 
+					autoScrollingSpeed:2000, 
+					autoScrollingEasing:"easeInOutQuad", 
+					autoScrollingDelay:500 
+				});
+			});
+		</script>	
+    </body>
+</html>

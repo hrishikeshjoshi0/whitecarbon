@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/jquery.overscroll.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		
+		<style type="text/css">
+			#overscroll { width: 1024px; height: 300px; overflow: hidden; position: absolute; }
+			#overscroll ul { width: 4500px; margin:0; padding: 0; }
+			#overscroll li { display: block;float: left;width: 500px;height:300px;background-color:#222;border-right:dotted 1px #333; }
+			
+			.edu {
+				margin : 10px;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 13px;
+				color: #C0A172;
+			}
+		</style>
+    </head>
+
+    <body>
+		<div id="wrap">
+			<div id="page-content">
+				<div id="page" class="clearfix shadow" style="display: block; margin-bottom:-100px;">
+					<div id="overscroll">
+						<ul>
+							<li>
+								<p class="edu">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
+									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</li>
+							<li>
+								<p class="edu">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
+									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</li>
+							<li>
+								<p class="edu">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
+									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</li>
+							<li>
+								<p class="edu">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
+									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</li>
+							<li>
+								<p class="edu">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
+									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="footer" class="oe_wrapper">
+					<div id="navigation"></div>
+					<div id="thumbnails" class="thumbs"></div>
+				</div>	
+			</div>
+			<!-- Copyrights -->
+			<div class="copyrights">
+				Copyrights 2012
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+        	window.onload=function(){
+        		$('#navigation').load('common/navigation.html',function() {
+						$('#home').addClass('current');
+				});
+				
+				$('#thumbnails').load('common/thumbnails.html',function() {
+					var scrollEasingAmount = 6;
+						
+					/* calling thumbnailScroller function with options as parameters */
+					$("#tS1").thumbnailScroller({ 
+						scrollerType:"hoverAccelerate", 
+						scrollerOrientation:"horizontal", 
+						scrollSpeed:2, 
+						scrollEasing:"easeOutCirc", 
+						scrollEasingAmount:600, 
+						acceleration:4, 
+						scrollSpeed:800, 
+						noScrollCenterSpace:10, 
+						autoScrolling:0, 
+						autoScrollingSpeed:2000, 
+						autoScrollingEasing:"easeInOutQuad", 
+						autoScrollingDelay:500 
+					});
+				});
+				
+				$(function(o){	
+					o = $("#overscroll").overscroll({
+						cancelOn: '.no-drag',
+						//hoverThumbs: true,
+						//persistThumbs: true,
+						//showThumbs: false,
+						scrollLeft: 200,
+						scrollTop: 100,
+						direction : 'horizontal'
+					}).on('overscroll:dragstart overscroll:dragend overscroll:driftstart overscroll:driftend', function(event){
+						//console.log(event.type);
+					});
+					$("#link").click(function(){
+						if(!o.data("dragging")) {
+							//console.log("clicked!");
+						} else {
+							return false;
+						}
+					});
+				});
+        	}
+        </script>
+    </body>
+</html>
