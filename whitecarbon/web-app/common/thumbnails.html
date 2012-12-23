@@ -6,51 +6,31 @@
 
 <head>
 	<script type="text/javascript">
-		var images = [
-			'images/thumbs/1.jpg',
-			'images/thumbs/2.jpg',
-			'images/thumbs/3.jpg',
-			'images/thumbs/4.jpg',
-			'images/thumbs/5.jpg',
-			'images/thumbs/6.jpg',
-		];
-		
-		/*
-		var html = "";
-		$(images).each(function() {
-			html += "<a href='#'><img height='120px' width='150px' class='aptionme_thumbs' src='" + this +  "/></a>"
+		$.ajax({
+			  url: "image/showcaseThumbnailImages",
+			  success: function(data) {
+				  $('#thumbnail_container').append(data);
+				  
+					
+					/* calling thumbnailScroller function with options as parameters */
+					$("#tS1").thumbnailScroller({ 
+						scrollerType:"hoverAccelerate", 
+						scrollerOrientation:"horizontal", 
+						scrollSpeed:2, 
+						scrollEasing:"easeOutCirc", 
+						scrollEasingAmount:600, 
+						acceleration:4, 
+						scrollSpeed:800, 
+						noScrollCenterSpace:10, 
+						autoScrolling:0, 
+						autoScrollingSpeed:2000, 
+						autoScrollingEasing:"easeInOutQuad", 
+						autoScrollingDelay:500 
+					});
+			  }
 		});
-		$('.jTscroller').append(html);
-		*/
-		
-		$(images).each(function() {
-			var image =  $('<img />').attr('src',this);
-		});
-	</script> 
+	</script>
 </head>
-<div id="tS1" class="jThumbnailScroller" style="z-index: 999;">
-	<div class="jTscrollerContainer">
-		<div class="jTscroller">
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/1.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/2.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/3.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/4.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/5.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/6.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/8.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/9.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/10.jpg" /></a>
-			
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/1.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/2.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/3.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/4.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/5.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/6.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/8.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/9.jpg" /></a>
-			<a href="#"><img height="120px" width="150px" class="captionme_thumbs" src="images/thumbs/10.jpg" /></a>
-		</div>
-	</div>
+<div id="thumbnail_container">
 </div>
 </body>

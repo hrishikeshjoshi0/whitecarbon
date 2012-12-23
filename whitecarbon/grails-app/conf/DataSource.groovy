@@ -23,7 +23,7 @@ environments {
     development {
 		grails.paypal.server = "https://www.sandbox.paypal.com/cgi-bin/webscr"
 		grails.paypal.email = "nachi1_1337118253_biz@gmail.com"
-		grails.serverURL = "http://localhost:8081/whitecarbon"
+		grails.serverURL = "http://localhost:8080/whitecarbon"
 		
 		
 		dataSource {
@@ -81,7 +81,7 @@ environments {
 		
 		dataSource {
 			dbCreate = "update" // one of 'create', 'create-drop','update'
-			url = "jdbc:mysql://moryasolutions.com:3306/hrishi23_webstore1?useUnicode=yes&characterEncoding=UTF-8"
+			url = "jdbc:mysql://moryasolutions.com:3306/hrishi23_whitecarbon?useUnicode=yes&characterEncoding=UTF-8"
 			username = "hrishi23_webstor"
 			password = "Eclipse@123"
 			pooled=true
@@ -97,7 +97,7 @@ environments {
 			 }
 		}
 		hibernate {
-			show_sql = true
+			show_sql = false
 		}
 	}
 }

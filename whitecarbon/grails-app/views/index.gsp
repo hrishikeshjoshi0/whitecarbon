@@ -79,11 +79,5 @@
 					
 			});
         </script>
-		
-		<script type='text/javascript'>
-			$(function() {
-			  $('#forgot_username_link').tipsy({gravity: 'w'});   
-			});
-	    </script>
     </body>
 </html>

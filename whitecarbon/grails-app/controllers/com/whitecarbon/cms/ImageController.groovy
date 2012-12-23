@@ -36,6 +36,19 @@ class ImageController {
 		def model = [images: results]
 		render(template: "showcase", model: model)
 	}
+	
+	def showcaseThumbnailImages() {
+		def c = Image.createCriteria()
+		def results = c.list {
+			and {
+				eq("role", 'thumbnail')
+				eq("active", true)
+			}
+		}
+		
+		def model = [images: results]
+		render(template: "thumbnail", model: model)
+	}
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -51,6 +64,10 @@ class ImageController {
 	}
 	
 	def uploadImageShowCase() {
+	
+	}
+	
+	def uploadImageThumbnail() {
 	
 	}
 	
@@ -144,6 +161,39 @@ class ImageController {
 		image.save()
 		
 		render(view:"uploadSuccess")
+	}
+	
+	def uploadThumbnail() {
+		def image= new Image()
+		
+		//handle uploaded file
+		def uploadedFile = request.getFile('payload')
+		if(!uploadedFile.empty){
+		  println "Class: ${uploadedFile.class}"
+		  println "Name: ${uploadedFile.name}"
+		  println "OriginalFileName: ${uploadedFile.originalFilename}"
+		  println "Size: ${uploadedFile.size}"
+		  println "ContentType: ${uploadedFile.contentType}"
+		  
+		  def webRootDir = servletContext.getRealPath("/")
+		  def userDir = new File(webRootDir, "/uploads")
+		  userDir.mkdirs()
+		  uploadedFile.transferTo( new File(userDir, uploadedFile.originalFilename))
+
+		  image.fromDate = new Date()
+		  image.imageUrl = uploadedFile.originalFilename
+		  image.active = true
+		  image.role = "thumbnail"
+		  image.save(flush:true)
+		  
+		  if(!image.hasErrors()) {
+			  flash.message = "Entry ${image.imageId} created"
+			  redirect(action:'list')
+		  }
+		  else {
+			  render(view:'create',model:[imageInstance:image])
+		  }
+		}
 	}
 
     def save() {
