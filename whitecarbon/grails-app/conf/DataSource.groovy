@@ -23,7 +23,7 @@ environments {
     development {
 		grails.paypal.server = "https://www.sandbox.paypal.com/cgi-bin/webscr"
 		grails.paypal.email = "nachi1_1337118253_biz@gmail.com"
-		grails.serverURL = "http://localhost:8080/whitecarbon"
+		grails.serverURL = "http://localhost:9090/whitecarbon"
 		
 		
 		dataSource {

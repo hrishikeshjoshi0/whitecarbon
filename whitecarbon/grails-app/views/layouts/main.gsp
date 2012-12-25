@@ -10,28 +10,72 @@
 		<title><g:layoutTitle default="Grails"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
+		
+		<link rel="stylesheet" href="${resource(dir: 'bootstrap/css', file: 'bootstrap.css')}" type="text/css">
+		<script type="text/javascript" src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'style.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>
 	<body>
 		<div id="wrap">
 			<div id="page-content">
-				<div id="page" class="clearfix shadow" style="display: block; margin-bottom:-100px;">
-					<g:layoutBody/>
+				<div id="page" class="clearfix shadow" style="display: block;">
+					 <div class="container-fluid">
+					 	<div class="navbar">
+						  <div class="navbar-inner">
+						    <a class="" href="#">
+						    	<img src="${resource(dir: 'images', file: 'logo.png')}" alt="White Carbon" height="38"/> 
+						    </a>
+						  </div>
+						</div>
+						<hr/>
+					 	<div class="row-fluid"> 
+							 <div class="span3" style="border-right: 1px dotted #eeeeee;">
+							 	<ul class="nav nav-list">
+								  <li class="nav-header">Site Links</li>
+								  <li>
+								  	<a target="_blank" href="index.html">Index Page</a>
+								  </li>
+								  <li>
+								  	<a target="_blank" href="showcase.html">Showcase Page</a>
+								  </li>
+								</ul>
+								  
+							 	<ul class="nav nav-list">
+								  <li class="nav-header">Image Manager</li>
+								  <li>
+								  	<g:link controller="image" action="uploadImage">Upload Image - Index Page</g:link>
+								  </li>
+								  <li>
+								  	<g:link controller="image" action="uploadImageShowCase">Upload Image - ShowCase Page</g:link>
+								  </li>
+								  <li>
+								  	<g:link controller="image" action="uploadImageThumbnail">Upload Image - Footer Thumbnails</g:link>
+								  </li>
+								  <li>
+								  	<g:link controller="image" action="uploadImageShowCaseWall">Upload Image - ShowCase Wall</g:link>
+								  </li>
+								</ul>
+							 </div> 
+							 <div class="span9">
+							 	<g:layoutBody/>
+							 </div> 
+						 </div>  
+					 </div> 
+					
 				</div>
 			</div>
 		</div>
-		<div id="footer" class="oe_wrapper">
-			<div id="navigation"></div>
-			<div id="thumbnails" class="thumbs"></div>
-		</div>		
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
 		<r:layoutResources />
 	</body>
+	
+	<script type="text/javascript">
+			$('#navigation').load('common/navigation.html',function() {
+		        	$('#home').addClass('current');
+					$('.thumbs').hide();		        	
+		    });
+        </script>
 </html>

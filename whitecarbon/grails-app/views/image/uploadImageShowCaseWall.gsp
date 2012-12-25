@@ -11,7 +11,7 @@
 	<body>
 		<div id="create-image" class="content scaffold-create" role="main">
 			<h5>
-				Upload Image for Thumbnails
+				Upload Image for Show Case Page
 			</h5>
 			
 			<g:if test="${flash.message}">
@@ -24,7 +24,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:uploadForm action="uploadThumbnail" method="post" >
+			<g:uploadForm action="uploadShowCaseWallImage" method="post" >
 			  <table>
 			  <tr class="prop">
 			    <td valign="top" class="name">
@@ -34,7 +34,19 @@
 			      <input type="file" id="payload" name="payload"/>
 			    </td>
 			  </tr>
-			  
+			   <tr class="prop">
+			    <td valign="top" class="name">
+			      <label for="role">View :</label>
+			    </td>
+			    <td valign="top">
+			      <select id="role" name="role">
+			      	<option id="bracelets" value="BRACELETS">Bracelets</option>
+			      	<option id="bracelets" value="RINGS">Rings</option>
+			      	<option id="bracelets" value="PENDANTS">Pendants</option>
+			      	<option id="bracelets" value="NECKLACES">Necklaces</option>
+			      </select>
+			    </td>
+			  </tr>
 			  <tr>
 			  	<td colspan="2">
 					<g:submitButton name="create" class="save" value="Upload" />

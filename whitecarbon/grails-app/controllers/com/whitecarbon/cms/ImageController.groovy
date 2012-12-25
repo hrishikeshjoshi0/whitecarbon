@@ -49,6 +49,19 @@ class ImageController {
 		def model = [images: results]
 		render(template: "thumbnail", model: model)
 	}
+	
+	def showcaseWallImages() {
+		def c = Image.createCriteria()
+		def results = c.list {
+			and {
+				like("role", "SHOWCASE-WALL-%")
+				eq("active", true)
+			}
+		}
+		
+		def model = [images: results]
+		render(template: "showcaseWall", model: model)
+	}
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -68,6 +81,10 @@ class ImageController {
 	}
 	
 	def uploadImageThumbnail() {
+	
+	}
+	
+	def uploadImageShowCaseWall() {
 	
 	}
 	
@@ -96,10 +113,10 @@ class ImageController {
 		  
 	      if(!image.hasErrors()) {
 	    	  flash.message = "Entry ${image.imageId} created" 
-			  redirect(action:'list')
+			  render(view:'uploadSuccess')
 	      }
 	      else {
-	    	  render(view:'create',model:[imageInstance:image])
+			  render(view:'uploadImage',model:[imageInstance:image])
 	      }
 	    }
 	}
@@ -160,7 +177,7 @@ class ImageController {
 		
 		image.save()
 		
-		render(view:"uploadSuccess")
+		render(view:"uploadSuccess",model:[imageInstance:image])
 	}
 	
 	def uploadThumbnail() {
@@ -168,6 +185,7 @@ class ImageController {
 		
 		//handle uploaded file
 		def uploadedFile = request.getFile('payload')
+		
 		if(!uploadedFile.empty){
 		  println "Class: ${uploadedFile.class}"
 		  println "Name: ${uploadedFile.name}"
@@ -183,15 +201,57 @@ class ImageController {
 		  image.fromDate = new Date()
 		  image.imageUrl = uploadedFile.originalFilename
 		  image.active = true
-		  image.role = "thumbnail"
+		  image.role = 'thumbnail'
 		  image.save(flush:true)
 		  
 		  if(!image.hasErrors()) {
 			  flash.message = "Entry ${image.imageId} created"
-			  redirect(action:'list')
+			  render(view:'uploadSuccess')
 		  }
 		  else {
-			  render(view:'create',model:[imageInstance:image])
+			  render(view:'uploadImageThumbnail',model:[imageInstance:image])
+		  }
+		}
+	}
+	
+	def uploadShowCaseWallImage() {
+		def image= new Image()
+		
+		//handle uploaded file
+		def uploadedFile = request.getFile('payload')
+		if(!uploadedFile.empty){
+		  println "Class: ${uploadedFile.class}"
+		  println "Name: ${uploadedFile.name}"
+		  println "OriginalFileName: ${uploadedFile.originalFilename}"
+		  println "Size: ${uploadedFile.size}"
+		  println "ContentType: ${uploadedFile.contentType}"
+		  
+		  def webRootDir = servletContext.getRealPath("/")
+		  def userDir = new File(webRootDir, "/uploads")
+		  userDir.mkdirs()
+		  uploadedFile.transferTo( new File(userDir, uploadedFile.originalFilename))
+		  
+		  def role = "SHOWCASE-WALL-" + params.role
+		  
+		  def existingImage = Image.findActiveByRole(role)
+		  if(existingImage) {
+			  existingImage.active = false
+			  existingImage.save(flush:true)
+		  }
+		  
+
+		  image.fromDate = new Date()
+		  image.imageUrl = uploadedFile.originalFilename
+		  image.active = true
+		  image.role = role
+		  image.save(flush:true)
+		  
+		  if(!image.hasErrors()) {
+			  flash.message = "Entry ${image.imageId} created"
+			  render(view:'uploadSuccess')
+		  }
+		  else {
+			  render(view:'uploadImageShowCaseWall',model:[imageInstance:image])
 		  }
 		}
 	}

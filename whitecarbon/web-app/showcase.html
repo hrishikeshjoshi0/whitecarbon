@@ -4,7 +4,7 @@
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" type="text/css" href="css/jmFullWall.css" />
 		
         <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
@@ -16,6 +16,7 @@
 		<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
 		<script type='text/javascript' src='js/gallery.js'></script>
 		
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 		<style>
 			.overlay {background-color:#000; cursor:wait;}
 			
@@ -27,31 +28,6 @@
 			}
 		</style>
 		
-		<script>
-			$(document).ready(function() {
-				
-				$("img").each(function(i) 
-				{
-					var captiontext = $(this).attr('title');
-					$(this).wrap("<div class='imgpost'></div>");
-					$(this).parent().append("<div class='thecaption'>" + captiontext + "</div>");		
-				});
-			});
-			
-			$(function(){
-				$('#wall').jmFullWall({
-					itemsForRow : 2,
-					itemTransition : 'slideDown',
-					itemTransitionSpeed : 150,
-					detailTransitionIn : 'slideDown',
-					detailTransitionOut : 'slideUp',
-					width : 1024,
-					height : 580
-				});	
-			});
-			
-			$('#wall-top').hide();
-		</script>
     </head>
 
     <body>
@@ -70,6 +46,8 @@
 							</center>							
 						</div>
 						<div id="wall">
+						</div>
+						<!-- <div id="wall">
 							<div id="wall-items">	
 								<div class="wall-item">
 									<span class="bg hide">images/showcase/showcase_1.jpg</span>
@@ -99,7 +77,7 @@
 									<a href="gallery_bracelets.html"><span class="title">Bracelets</span></a>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div id="footer" class="oe_wrapper">
@@ -116,32 +94,63 @@
 		
 		<script type="text/javascript">
         	window.onload=function(){
-		        $("img").hover(
-        		  function () {
-        			$(this)
-        			.animate({ 
-      					opacity: 0.7
-      				} );
-					$(this).next().show();
-        		  }, 
-        		  function () {
-        			  $(this)
-        			  .animate({ 
-        					opacity: 1.0
-        			  });
-					  $(this).next().hide();
-        		  }
-        		);
-		        
-		        $('#navigation').load('common/navigation.html',function() {
-					$('#showcase').addClass('current');
-					$('.thumbs').hide();
-		        	var bottom = $('.thumbs').css('bottom');
-		        	$('.navigation').css(
-		        		{
-		        			'bottom': bottom
-		        		}
-		        	); 
+        		$.ajax({
+					  url: "image/showcaseWallImages",
+					  success: function(data) {
+						$('#wall').html(data);
+						
+						$("img").each(function(i) {
+							var captiontext = $(this).attr('title');
+							$(this).wrap("<div class='imgpost'></div>");
+							$(this).parent().append("<div class='thecaption'>" + captiontext + "</div>");		
+						});
+						
+						//
+						$(function(){
+							$('#wall').jmFullWall({
+								itemsForRow : 2,
+								itemTransition : 'slideDown',
+								itemTransitionSpeed : 150,
+								detailTransitionIn : 'slideDown',
+								detailTransitionOut : 'slideUp',
+								width : 1024,
+								height : 580
+							});	
+						});
+						
+						$('#wall-top').hide();
+						//
+						
+						//
+				        $("img").hover(
+		        		  function () {
+		        			$(this)
+		        			.animate({ 
+		      					opacity: 0.7
+		      				} );
+							$(this).next().show();
+		        		  }, 
+		        		  function () {
+		        			  $(this)
+		        			  .animate({ 
+		        					opacity: 1.0
+		        			  });
+							  $(this).next().hide();
+		        		  }
+		        		);
+				        
+				        $('#navigation').load('common/navigation.html',function() {
+							$('#showcase').addClass('current');
+							$('.thumbs').hide();
+				        	var bottom = $('.thumbs').css('bottom');
+				        	$('.navigation').css(
+				        		{
+				        			'bottom': bottom
+				        		}
+				        	); 
+						});
+				        //
+					  }
 				});
         	}
         </script>

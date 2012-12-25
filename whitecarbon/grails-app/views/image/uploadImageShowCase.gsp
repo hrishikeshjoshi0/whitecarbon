@@ -4,11 +4,16 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'image.label', default: 'Image')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<title>
+			Image Manager | White Carbon
+		</title>
 	</head>
 	<body>
 		<div id="create-image" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+			<h5>
+				Upload Image for Show Case Page
+			</h5>
+			
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>

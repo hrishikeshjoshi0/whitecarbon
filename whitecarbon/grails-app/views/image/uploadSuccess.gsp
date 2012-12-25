@@ -4,11 +4,13 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'image.label', default: 'Image')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<title>
+			Image Manager | White Carbon
+		</title>
 	</head>
 	<body>
-		<h2>
+		<h5>
 			Image Uploaded.
-		</h2>
+		</h5>
 	</body>
 </html>
