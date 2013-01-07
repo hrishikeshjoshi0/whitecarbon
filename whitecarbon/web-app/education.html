@@ -10,6 +10,10 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 		
+		<script src="bootstrap/js/bootstrap.js"></script>
+		<script src="js/application.js"></script>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css"/>
+		
 		<style type="text/css">
 			#overscroll { width: 1024px; height: 300px; overflow: hidden; position: absolute; }
 			#overscroll ul { width: 4500px; margin:0; padding: 0; }
@@ -25,9 +29,22 @@
     </head>
 
     <body>
+    	<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container popover-container">
+				      <p class="pull-right" style="margin-right:100px;">
+	                               <a id="requirementFormPopOverLink" href="#" 
+							class="btn btn-success requirement_form_link" rel="popover"
+							data-placement="bottom"> Contact Us </a>
+					</p>		
+				</div>
+	
+			</div>
+		</div>
 		<div id="wrap">
 			<div id="page-content">
 				<div id="page" class="clearfix shadow" style="display: block; margin-bottom:-100px;">
+					<br/>
 					<div id="overscroll">
 						<ul>
 							<li>
@@ -72,10 +89,6 @@
 					<div id="navigation"></div>
 					<div id="thumbnails" class="thumbs"></div>
 				</div>	
-			</div>
-			<!-- Copyrights -->
-			<div class="copyrights">
-				Copyrights 2012
 			</div>
 		</div>
 		
@@ -127,5 +140,8 @@
 				});
         	}
         </script>
+        <div id="content-wrapper" style="display: none;">
+        	
+        </div>
     </body>
 </html>

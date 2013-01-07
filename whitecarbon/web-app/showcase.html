@@ -16,9 +16,13 @@
 		<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
 		<script type='text/javascript' src='js/gallery.js'></script>
 		
+		<script src="bootstrap/js/bootstrap.js"></script>
+		<script src="js/application.js"></script>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css"/>
+		
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 		<style>
-			.overlay {background-color:#000; cursor:wait;}
+			.overlay {background-color:#000; cursor:wait; margin-top: -20px;}
 			
 			#simplemodal-overlay {background-color:#111;opacity:0.9;}
 			#simplemodal-container {background-color:#333; border:1px solid #eee;}
@@ -33,10 +37,21 @@
     <body>
 		<div class="overlay" id="overlay-container">
 		</div>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container popover-container">
+				      <p class="pull-right" style="margin-right:100px;">
+	                               <a id="requirementFormPopOverLink" href="#" 
+							class="btn btn-success requirement_form_link" rel="popover"
+							data-placement="bottom"> Contact Us </a>
+					</p>		
+				</div>
+	
+			</div>
+		</div>
 		<div id="wrap">
 			<div id="page-content">
 				<div id="page" class="clearfix shadow">
-				
 					<div id="wall-top">
 					</div>
 					<div id="wall-container" class="showcase">
@@ -80,16 +95,12 @@
 						</div> -->
 					</div>
 				</div>
+				<br/>
 				<div id="footer" class="oe_wrapper">
 					<div id="navigation"></div>
 					<div id="thumbnails" class="thumbs"></div>
 				</div>
 			</div>	
-			
-			<!-- Copyrights -->
-			<div class="copyrights">
-				Copyrights 2012
-			</div>
 		</div>	
 		
 		<script type="text/javascript">
@@ -154,5 +165,8 @@
 				});
         	}
         </script>
+         <div id="content-wrapper" style="display: none;">
+        	
+        </div>
     </body>
 </html>

@@ -16,9 +16,8 @@ if (typeof jQuery !== 'undefined') {
 		});
 		var options = {
 			animation : 'true',
-			placement : 'bottom',
 			delay: { show: 500, hide: 100 },
-			trigger : 'click',
+			trigger : 'manual',
 			html : true,
 			title: 'Let Us Know',
 			content: function () {
@@ -26,6 +25,22 @@ if (typeof jQuery !== 'undefined') {
 			},
 			delay: { show: 500, hide: 100 }
 		}
+		
 		$('#requirementFormPopOverLink').popover(options);
+		
+		$(".requirements-form-close-link").live('click',function() {
+			$('#requirementFormPopOverLink').popover('destroy');
+		});
+		
+		$('#requirementFormPopOverLink').live('click',function() {
+			$.ajax({
+				  url: "common/requirement_form.html",
+				  success: function(data) {
+					  $('#content-wrapper').html(data);	  
+				  }
+			});
+			$('#requirementFormPopOverLink').popover(options);
+			$('#requirementFormPopOverLink').popover('show');
+		});
 	});
 }

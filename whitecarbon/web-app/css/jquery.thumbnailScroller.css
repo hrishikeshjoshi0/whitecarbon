@@ -81,6 +81,7 @@ scrollers styling
 	border: none;
 	opacity: 1.0;
 	z-index: 999;
+	height: 100px;
 }
 
 /* different styled scrollers */

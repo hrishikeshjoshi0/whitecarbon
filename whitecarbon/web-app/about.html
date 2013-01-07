@@ -10,14 +10,25 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> 
         
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <script src="bootstrap/js/bootstrap.js"></script>
+		<script src="js/application.js"></script>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css"/>
 		
 		<style type="text/css">
 			#overscroll { width: 1024px; height: 470px; overflow: hidden; position: absolute; }
-			#overscroll ul { width: 3600px; margin:0; padding: 0; }
+			#overscroll ul { width: 4500px; margin:0; padding: 0; }
 			#overscroll li { display: block;float: left;width: 500px;height:300px;background-color:#222;border-right:dotted 1px #333; }
 			
 			.edu {
-				margin : 10px;
+				margin-top : 10px;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 13px;
+				color: #C0A172;
+			}
+			
+			.edu_first {
+				margin-top : 40px;
+				margin-left: 40px;
 				font-family: 'Open Sans', sans-serif;
 				font-size: 13px;
 				color: #C0A172;
@@ -64,12 +75,24 @@
     </head>
 
     <body>
+    	<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container popover-container">
+				      <p class="pull-right" style="margin-right:100px;">
+	                               <a id="requirementFormPopOverLink" href="#" 
+							class="btn btn-success requirement_form_link" rel="popover"
+							data-placement="bottom"> Contact Us </a>
+					</p>		
+				</div>
+	
+			</div>
+		</div>
 		<div id="wrap">
 			<div id="page-content">
-				<div id="page" class="clearfix shadow" style="display: block; margin-bottom:-100px;">
+				<div id="page" class="clearfix shadow" style="display: block; margin-bottom:-90px;">
 					<div id="overscroll">
 						<ul>
-							<li>
+							<li class="edu_first">
 								<div class="edu_image_full_width" style="margin-top: 100px;">
 									<div class="edu_image_full_width">
 										<center>
@@ -107,7 +130,7 @@
 							<li>
 								<div class="edu">
 									<div class="left" style="width:20%;">
-										<br/><br/>
+										<br/><br/><br/><br/>
 										<div style="border-bottom: 1px #000 dotted;padding-bottom:20px;width: 155px;">
 											<img src="images/about/Selection_Diamond_2.jpg" class="edu_image_half_width"/>
 										</div>
@@ -119,12 +142,13 @@
 										</div>
 									</div>
 									
-									<div class="right" style="width:65%;margin: 1px;">
-										<h2 class="edu_content_header_half">
+									<div class="right" style="width:65%;">
+										<br/><br/><br/><br/>
+										<h2 class="edu_content_header_half" style="margin-bottom: -20px;">
 											Why WC Diamonds?
 										</h2>
 										
-										<div class="edu" style="margin: 2px;">
+										<div class="edu" style="">
 											<b>Economic Procuring:</b>
 											<p>
 												White Carbon has access to diamonds from nearly all suppliers
@@ -134,13 +158,11 @@
 												the diamonds you require on the Customer Requirement Page and
 												we will get back to you in 48 hours.
 											</p>
-											<br />
 											
 											<b>Responsible Procuring:</b>
 											<p>
 												White Carbon makes sure to source diamonds that ecologically and ethically responsible.
 											</p>
-											<br />
 											
 											<b>Educated Purchase:</b>
 											<p>
@@ -179,7 +201,7 @@
 							<li>
 								<div class="edu">
 									<div class="left" style="width:20%;">
-										<br/><br/>
+										<br/><br/><br/><br/>
 										<div style="border-bottom: 1px #000 dotted;padding-bottom:20px;width: 155px;">
 											<img src="images/about/Selection_Jewelry_2.jpg" class="edu_image_half_width"/>
 										</div>
@@ -192,6 +214,7 @@
 									</div>
 									
 									<div class="right" style="width:65%;margin: 1px;">
+										<br/><br/><br/><br/>
 										<h2 class="edu_content_header_half">
 											White Carbon Jewelry
 										</h2>
@@ -204,7 +227,6 @@
 												White Carbon is hand-picked by our trained gemologists for
 												choosing only the best to set up in WC Jewelry.
 											</p>
-											<br />
 											
 											<b>Personalized Jewelry:</b>
 											<p>
@@ -212,7 +234,6 @@
 												which we then get manufactured by some of the finest local
 												craftsmen.
 											</p>
-											<br />
 											
 											<b>Quality:</b>
 											<p>
@@ -222,10 +243,6 @@
 											<a href="mailto:customer.service@whitecarbon.in" class="edu_link">
 											customer.service@whitecarbon.in</a> to help us inform you its
 											gold and diamond quantity and total value.</p>
-											
-											<b>Regular Maintenance:</b>
-											<p>White Carbon provides free cleaning for your jewelry which
-											is a necessity for maintaining its beauty.</p>
 										</div>
 									</div>
 								</div>
@@ -233,6 +250,16 @@
 							
 							<li>
 								<div class="edu">
+									<br/><br/><br/><br/><br/>
+									<b>Regular Maintenance:</b>
+											<p>White Carbon provides free cleaning for your jewelry which
+											is a necessity for maintaining its beauty.</p>
+								</div>
+							</li>
+							
+							<li>
+								<div class="edu">
+									<br/><br/>
 									<div class="edu_image_full_width" style="margin-left: 25px;">
 										<img src="images/about/Selection_Director_Message_1.jpg"/>
 									</div>
@@ -255,6 +282,7 @@
 							
 							<li>
 								<div class="edu">
+									<br/><br/><br/>
 									<div class="edu">Over the past decade, our Company has made a
 									strong commitment to socially and environmentally responsible
 									business practices. Integrated throughout our business model,
@@ -284,14 +312,11 @@
 						</ul>
 					</div>
 				</div>
-				<div id="footer" class="oe_wrapper">
+				<br/><br/>
+				<div id="footer" class="oe_wrapper" style="margin-top: -15px;">
 					<div id="navigation"></div>
 					<div id="thumbnails" class="thumbs"></div>
 				</div>	
-			</div>
-			<!-- Copyrights -->
-			<div class="copyrights">
-				Copyrights 2012
 			</div>
 		</div>
 		
@@ -327,5 +352,8 @@
 				});
         	}
         </script>
+        <div id="content-wrapper" style="display: none;">
+        	
+        </div>
     </body>
 </html>

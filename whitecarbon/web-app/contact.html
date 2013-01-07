@@ -10,6 +10,10 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 		
+		<script src="bootstrap/js/bootstrap.js"></script>
+		<script src="js/application.js"></script>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css"/>
+		
 		<style>
 			#address {
 				font-family: 'Open Sans', sans-serif;
@@ -33,23 +37,35 @@
     </head>
 
     <body>
+    	<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container popover-container">
+				      <p class="pull-right" style="margin-right:100px;">
+	                               <a id="requirementFormPopOverLink" href="#" 
+							class="btn btn-success requirement_form_link" rel="popover"
+							data-placement="bottom"> Contact Us </a>
+					</p>		
+				</div>
+	
+			</div>
+		</div>
 		<div id="wrap">
 			<div id="page-content">
-				<div id="page" class="clearfix shadow" style="display: block; margin-bottom:-100px;">
+				<div id="page" class="clearfix shadow" style="display: block; margin-bottom: -90px;margin-top: 0px;">
 					<center>
-						<div id="map">
+						<div id="map" style="margin-top:25px;"">
 							<iframe width="600px" height="200px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
 							src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=tata+road+Opera+House,+Girgaon,+Mumbai,+Maharashtra,+India&amp;aq=&amp;sll=18.955141,72.817956&amp;sspn=0.011608,0.021136&amp;ie=UTF8&amp;hq=tata+road+Opera+House,&amp;hnear=Girgaon,+Mumbai,+Maharashtra,+India&amp;ll=19.000653,72.847364&amp;spn=0.180793,0.072701&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=tata+road+Opera+House,+Girgaon,+Mumbai,+Maharashtra,+India&amp;aq=&amp;sll=18.955141,72.817956&amp;sspn=0.011608,0.021136&amp;ie=UTF8&amp;hq=tata+road+Opera+House,&amp;hnear=Girgaon,+Mumbai,+Maharashtra,+India&amp;ll=19.000653,72.847364&amp;spn=0.180793,0.072701&amp;t=m" 
 							style="color:#FAFAFA;text-align:left">View Larger Map</a></small>
 						</div>
 							
-						<div class="name" style="margin-top:15px;border-bottom: 1px solid #C0A172;width:400px;">
+						<div class="name" style="margin-top:-5px;border-bottom: 1px solid #C0A172;width:400px;">
 							<img src="images/contact_us.png" height="40px" />
 						</div>
 						
 						<br/>
 						
-						<div id="address" style="width:400px;">
+						<div id="address" style="width:400px;margin-top: -20px;">
 							<div class="left" style="text-align : left;">
 								<div >
 									48, Popular Arcade, <br/>
@@ -69,14 +85,11 @@
 						</div>
 					</center>
 				</div>
-				<div id="footer" class="oe_wrapper">
+				<div id="footer" class="oe_wrapper" style="margin-top: -10px;">
 					<div id="navigation"></div>
 					<div id="thumbnails" class="thumbs"></div>
 				</div>
-				<!-- Copyrights -->
-				<div class="copyrights">
-					Copyrights 2012
-				</div>
+				<br/>
 			</div>
 		</div>
 		
@@ -106,6 +119,9 @@
 					autoScrollingDelay:500 
 				});
 			});
-		</script>	
+		</script>
+		<div id="content-wrapper" style="display: none;">
+        	
+        </div>	
     </body>
 </html>
