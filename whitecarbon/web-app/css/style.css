@@ -6,7 +6,6 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
-	color: #FFF;
 	/* text-transform:uppercase; */
 	/* overflow-x: hidden; */
 }
@@ -34,9 +33,11 @@ a img{
 #wrap {
 	/* width: 1002px; */
 	width: 1024px;
-	height: auto;
+	/* height: 580px; */
+	height : 100%;
 	margin: auto;
-	background-color: #222;
+	display: block;
+	background-color: #222423;
 	position:relative;
 }
 			
@@ -95,7 +96,7 @@ td,th {
 ul.oe_menu {
 	list-style: none;
 	position: relative;
-	margin: 0px 0px 0px 0px;
+	margin: 20px 0px 0px 0px;
 	width: 540px;
 	float: left;
 	clear: both;
@@ -115,7 +116,7 @@ ul.oe_menu>li {
 ul.oe_menu>li>a {
 	display: block;
 	/*background-color: #101010;*/
-	background-color: #222;
+	background-color: #222423;
 	color: #aaa;
 	text-decoration: none;
 	font-weight: bold;
@@ -139,7 +140,6 @@ ul.oe_menu>li>a:hover,ul.oe_menu>li.selected>a {
 	opacity: 1.0;
 	/* padding: 5px; */
 }
-*/
 
 .oe_wrapper {
 	z-index: 88;
@@ -163,7 +163,7 @@ ul.oe_menu div {
 
 ul.oe_menu div ul li a {
 	text-decoration: none;
-	color: #222;
+	color: #222423;
 	padding: 2px 2px 2px 4px;
 	margin: 2px;
 	display: block;
@@ -200,7 +200,7 @@ li.oe_heading {
 	/*background-color: #101010;*/
 	
 	/*border-top: 1px dotted #444;*/
-	background-color: #222;
+	background-color: #222423;
 	color: #aaa;
 	height: 70px;
 	position: relative;
@@ -211,7 +211,7 @@ li.oe_heading {
 .thumbs {
 	width: 1024px;
 	display: block;
-	background-color: #222;
+	background-color: #222423;
 	color: #aaa;
 	height: 100px;
 	position: relative;
@@ -224,7 +224,7 @@ li.oe_heading {
 	font-size: 12px;
 	width: 1024px;
 	display: block;
-	background-color: #222;
+	background-color: #222423;
 	position: relative;
 	color: #FAFAFA;
 	height: 20px;
@@ -235,38 +235,6 @@ li.oe_heading {
 	text-transform: uppercase;
 }
 
-.imgpost 
-{
-	float: left;
-	margin: 0px 20px 20px 0px;
-	position: relative;
-}
-
-/* so that image still floats and looks nice even if JS is turned off */
-.imgpost img,
-img.captionme
-{
-	float: left;
-	/*background-color: #fff;
-	border: 1px solid #d7d7d7;
-	padding: 4px;*/
-}
-
-.imgpost .thecaption 
-{
-	/*background: url('../images/caption.png') no-repeat left bottom;*/
-	background-color: #101010;
-	color: #aaa;
-	height: 40px;
-	opacity: 0.8;
-	bottom: 30px;
-	left: -23px;
-	padding: 8px 0px 18px 13px;
-	position: absolute;
-	width: 95%;
-	height: 20px;
-	display:none;
-}
 
 /* PAGINATION */
 
@@ -283,7 +251,7 @@ img.captionme
 
 .pagination a,
 .pagination .currentStep {
-	color: #666666;
+	color: #222423;
 	display: inline-block;
 	margin: 0 0.1em;
 	padding: 0.25em 0.7em;
@@ -295,8 +263,16 @@ img.captionme
 
 .pagination a:hover, .pagination a:focus,
 .pagination .currentStep {
-	background-color: #999999;
+	background-color: #222423;
 	color: #ffffff;
 	outline: none;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
+
+#overscroll { width: 1024px; height: 470px; overflow: hidden; position: absolute; }
+			#overscroll ul { width: 4500px; margin:0; padding: 0; }
+			#overscroll li { display: block;float: left;width: 600px;height:450px;background-color:#222423;border-right:dotted 1px #333; }
+			
+			
+			
+			

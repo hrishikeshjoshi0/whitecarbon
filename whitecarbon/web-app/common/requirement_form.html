@@ -50,10 +50,7 @@
 	<ul id="validation_errors">
 	</ul>
 </div>
-<div class="well" style="margin-top: 2px;margin-bottom: 2px;padding-top: 2px;padding-bottom: 2px;">
-	* indicates required fields. <br/>
-	^ indicates that you must enter atleast one of the fields marked as '^'.
-</div>
+
 <div class="accordion" id="accordion2">
 	<div>
 		<table>
@@ -86,8 +83,8 @@
 			<a class="accordion-toggle" data-toggle="collapse"
 				data-parent="#accordion2" href="#collapseOne"> Solitaire </a>
 		</div>
-		<div id="collapseOne" class="accordion-body collapse in">
-			<div class="accordion-inner">
+		<div id="collapseOne" class="accordion-body collapse collapsed">
+			<div class="accordion-inner" style="overflow:scroll;">
 				<form id="solitaire-form" action="#">
 					<input type="hidden" name="form" value="solitaire"/>
 					<table>
@@ -107,9 +104,7 @@
 									<option value="Pear">Pear</option>
 									<option value="Heart">Heart</option>
 							</select></td>
-						</tr>
-
-						<tr>
+						
 							<td><label for="solitaire_single_pair">Single/Pair*</label></td>
 							<td><select id="solitaire_single_pair"
 								name="solitaire_single_pair">
@@ -123,9 +118,7 @@
 							<td><label for="weight_per_stone">Weight Per Stone*</label></td>
 							<td><input id="weight_per_stone" name="weight_per_stone"
 								type="text" class="input-mini numeric" placeholder="Enter Weight" /></td>
-						</tr>
-
-						<tr>
+						
 							<td><label>Color*</label></td>
 							<td><select id="solitaire_color_from" name="solitaire_color_from"
 								class="input-mini">
@@ -187,9 +180,7 @@
 									<option value="I2">I2</option>
 									<option value="I3">I3</option>
 							</select></td>
-						</tr>
-
-						<tr>
+						
 							<td><label for="solitaire_cut">Cut</label></td>
 							<td><select id="solitaire_cut" name="solitaire_cut" class="input-mini">
 									<option value="nil"> </option>
@@ -210,9 +201,7 @@
 									<option value="XVGVG">XVGVG</option>
 									<option value="VGVGVG">VGVGVG</option>
 							</select></td>
-						</tr>
 						
-						<tr>
 							<td><label for="solitaire_syymetry">Syymetry</label></td>
 							<td><select id="solitaire_syymetry" name="solitaire_syymetry" class="input-mini">
 									<option value="Any">Any</option>
@@ -241,7 +230,7 @@
 			<a class="accordion-toggle" data-toggle="collapse"
 				data-parent="#accordion2" href="#collapseTwo"> Loose Diamonds </a>
 		</div>
-		<div id="collapseTwo" class="accordion-body collapse">
+		<div id="collapseTwo" class="accordion-body collapse collapsed">
 			<div class="accordion-inner">
 				<div class="well" style="margin-top: 2px;margin-bottom: 2px;padding-top: 2px;padding-bottom: 2px;">
 					* indicates mandatory fields. <br/>
@@ -267,9 +256,7 @@
 									<option value="Pear">Pear</option>
 									<option value="Heart">Heart</option>
 							</select></td>
-						</tr>
-
-						<tr>
+						
 							<td><label>Quantity*</label></td>
 							<td><input id="loose_diamonds_qty_from"
 								name="loose_diamonds_qty_from" type="text" class="input-mini numeric" />
@@ -311,9 +298,7 @@
 									<option value="M">M</option>
 									<option value="N-">N-</option>
 							</select></td>
-						</tr>
-
-						<tr>
+						
 							<td><label>Clarity^</label></td>
 							<td><select id="loose_diamonds_clarity_from"
 								name="loose_diamonds_clarity_from" class="input-mini">
@@ -355,9 +340,7 @@
 									<option value="XVGVG">XVGVG</option>
 									<option value="VGVGVG">VGVGVG</option>
 							</select></td>
-						</tr>
-
-						<tr>
+						
 							<td><label>Price Range^</label></td>
 							<td><input id="loose_diamonds_price_from"
 								name="loose_diamonds_price_from" type="text" class="input-mini numeric" />
@@ -378,8 +361,12 @@
 			<a class="accordion-toggle" data-toggle="collapse"
 				data-parent="#accordion2" href="#collapseThree"> Jewelry </a>
 		</div>
-		<div id="collapseThree" class="accordion-body collapse">
+		<div id="collapseThree" class="accordion-body collapse collapsed">
 			<div class="accordion-inner">
+				<div class="well" style="margin-top: 2px;margin-bottom: 2px;padding-top: 2px;padding-bottom: 2px;">
+					* indicates mandatory fields. <br/>
+					^ indicates that you must enter atleast one of the fields marked as '^'.
+				</div>
 				<form id="jewelry-form" action="#" onsubmit="return false;">
 					<input type="hidden" name="form" value="jewelry" />
 					<table>

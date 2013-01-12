@@ -13,7 +13,7 @@ class RequirementsController {
 			bindData(command, p)
 			//Email
 			mailService.sendMail {
-				to "hrishi2323@gmail.com"
+				to command.email
 				subject "New Enquiry About Solitaire Diamonds"
 				html g.render(template:"SolitaireDiamondsEnquiry",bean : command, var : "command")
 			}
@@ -23,7 +23,7 @@ class RequirementsController {
 			bindData(command, p)
 			//Email
 			mailService.sendMail {
-				to "hrishi2323@gmail.com"
+				to command.email
 				subject "New Enquiry About Loose Diamonds"
 				html g.render(template:"LooseDiamondsEnquiry",bean : command, var : "command")
 			}
@@ -32,7 +32,7 @@ class RequirementsController {
 			bindData(command, p)
 			//Email
 			mailService.sendMail {
-				to "hrishi2323@gmail.com"
+				to command.email
 				subject "New Enquiry About Jewelry"
 				html g.render(template:"JewelryEnquiry",bean : command, var : "command")
 			}
