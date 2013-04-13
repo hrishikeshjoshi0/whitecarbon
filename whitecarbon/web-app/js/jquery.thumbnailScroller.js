@@ -30,7 +30,7 @@ Homepage: manos.malihu.gr/jquery-thumbnail-scroller
 		if(options.scrollerOrientation=="horizontal"){
 			$scrollerContainer.css("width",999999); 
 			var totalWidth=$scroller.outerWidth(true);
-			$scrollerContainer.css("width","100%");
+			$scrollerContainer.css("width",totalWidth);
 		}else{
 			var totalWidth=$scroller.outerWidth(true);
 		}

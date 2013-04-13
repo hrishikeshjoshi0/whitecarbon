@@ -49,5 +49,6 @@ grails.project.dependency.resolution = {
 		//runtime ":yui-minify-resources:0.1.4"
 
 		build ":tomcat:$grailsVersion"
+		compile ":mail:1.0.1"
 	}
 }
